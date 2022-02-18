@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<html lang="zn-CH">
+<head>
+    <meta charset="utf-8">
+    <title>产品中心|东舟商城</title>
+    <link rel="shortcut icon" href="/content/shop/images/img/favicon.ico" type="image/x-icon" />
+    <link href="/Content/shop/css/style.css" rel="stylesheet" />
+    <link href="/Content/shop/css/haitao.css" rel="stylesheet" />
+    <link href="/Content/shop/css/layout.css" rel="stylesheet" />
+    <script src="/Content/shop/js/jquery.min.js"></script>
+    <script src="/Content/shop/js/my.js"></script>
+    <script src="/Content/shop/js/base.js"></script>
+    <script src="/Content/shop/js/kefu.js"></script>
+    <script src="/Content/layer/layer.js"></script>
+    
+    <link rel="stylesheet" href="/content/shop/css/shop.css?v09" />
+
+    <script>
+        var text = "本网站使用cookie为您提供更好的浏览体验。了解更多关于我们如何使用cookie以及如何更改设置的信息。";
+        $(function () {
+            var aa = cookie("TS");
+            if (aa == "" || aa == null) {
+            layer.open({
+              type: 1
+            , area: 'auto'
+            , maxWidth: '500px'
+            , closeBtn: false
+            , title: 'Cookies'
+            , move: false
+            , offset: '0px' //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+            , id: 'layerDemo' + 't' //防止重复弹出
+            , content: '<div style="padding: 20px 20px;font-size:16px;">' + text + '</div>'
+            , btn: ['同意', '拒绝']
+            , btnAlign: 'c' //按钮居中
+            , shade: 0 //不显示遮罩
+            , yes: function () {
+                addCookie("TS", "ty", 0);
+                layer.closeAll();
+            }
+                , btn2: function () {
+                    layer.closeAll();
+                }
+                });
+            }
+        });
+
+
+
+        //获得coolie 的值
+        function cookie(name) {
+            var cookieArray = document.cookie.split("; "); //得到分割的cookie名值对   
+            var cookie = new Object();
+            for (var i = 0; i < cookieArray.length; i++) {
+                var arr = cookieArray[i].split("=");       //将名和值分开   
+                if (arr[0] == name) return unescape(arr[1]); //如果是指定的cookie，则返回它的值   
+            }
+            return "";
+        }
+
+        function addCookie(objName, objValue, objHours) {      //添加cookie
+            var str = objName + "=" + escape(objValue);
+            if (objHours > 0) {                               //为时不设定过期时间，浏览器关闭时cookie自动消失
+                var date = new Date();
+                var ms = objHours * 3600 * 1000;
+                date.setTime(date.getTime() + ms);
+                str += "; expires=" + date.toGMTString();
+            }
+            document.cookie = str;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="w clearfix">
+            <a class="logo fl" href="/shop/index">
+                <img src="/Content/shop/images/New_Logo_PC.png" alt=" " />
+                
+            </a>
+            
+            <div class="headr fr">
+                <nav class="clearfix">
+                    <ul class="navigation clearfix fl">
+                        <li class="nav-li" id="link1">
+                            <a href="/shop/index">首页</a>
+                        </li>
+                        <li class="nav-li" id="link2">
+                            <a href="/shop/products">华为产品</a>
+                        </li>
+                        <li class="nav-li" id="link3">
+                            <a href="/shop/partner">金源商城</a>
+                        </li>
+                        
+                        <li class="nav-li" id="link5">
+                            <a href="/shop/active">优惠活动</a>
+                            <div class="li-content youhui clearfix">
+                                <div class="list fl">
+                                    <div class="title">优惠活动</div>
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                                <div class="list fl">
+                                    <div class="title">快速导航</div>
+                                    <ul>
+                                        <li><a href="/news">新闻公告</a></li>
+                                        <li><a href="/shop/help">新手帮助</a></li>
+                                        <li><a href="/shop/help">售后服务</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li id="link6" style="float:left;margin:0px 20px;">
+                            <a href="/shop/cart">
+                                <img src="/Content/shop/images/car.jpg" width="45" height="45  " />
+                            </a>
+                        </li>
+                        <li id="link7" style="float:left;margin-top:10px;">
+                            <a href="/shop/index">中文&nbsp;&nbsp;|</a>
+                        </li>
+
+                        <li id="link8" style="float: left; margin-top: 10px;">
+                            <a href="/shop/index/enindex">&nbsp;&nbsp;English</a>
+                        </li>
+                    </ul>
+                            <div class="huiyuan fl clearfix">
+                                <a class="fl" href="/reg">注册</a>
+                                <span class="fl">|</span>
+                                <a class="fl" href="/login">登录</a>
+                            </div>
+
+                </nav>
+            </div>
+        </div>
+    </header>
+    <script type="text/javascript">
+        $().ready(function () {
+            var $contentWidth = 150;
+            $('header .li-content').each(function () {
+                $(this).find('.list').each(function () {
+                    $thisListWidth = $(this).width();
+                    $contentWidth += $thisListWidth;
+                });
+                $(this).css('width', $contentWidth + 'px');
+                $contentWidth = 150;
+            });
+        });
+    </script>
+    <!-- main -->
+    
+<div class="inpagebanner" style="background: url(/content/shop/images/in/daigou-banner.jpg) center center no-repeat;"></div>
+<!-- /*======================↓===================  #inmain  ======================↓====================*/ -->
+<section id="shopmain">
+    <div class="w clearfix">
+        <div class="fl lside">
+
+<section id="cate_b" class="b">
+    <section class="bhead">
+        产品分类
+    </section>
+    <section class="bbody">
+        <ul>
+                        <li>
+                            <a class="icon_cate_a" href="/shop/products?cid=100">耳机</a>
+                                <ul class="p_next">
+                                            <li title="蓝牙耳机"><a href="/shop/products?cid=99" title="蓝牙耳机"> 蓝牙...</a></li>
+                                </ul>
+
+                        </li>
+                        <li>
+                            <a class="icon_cate_b" href="/shop/products?cid=98">手表</a>
+                                <ul class="p_next">
+                                            <li title="智能手表"><a href="/shop/products?cid=102" title="智能手表"> 智能...</a></li>
+                                </ul>
+
+                        </li>
+                        <li>
+                            <a class="icon_cate_c" href="/shop/products?cid=96">笔记本电脑/平板</a>
+                                <ul class="p_next">
+                                            <li title="平板电脑"><a href="/shop/products?cid=104" title="平板电脑"> 平板...</a></li>
+                                            <li title="笔记本"><a href="/shop/products?cid=103" title="笔记本"> 笔记...</a></li>
+                                </ul>
+
+                        </li>
+                        <li>
+                            <a class="icon_cate_d" href="/shop/products?cid=95">手机</a>
+                                <ul class="p_next">
+                                            <li title="智能手机"><a href="/shop/products?cid=105" title="智能手机"> 智能...</a></li>
+                                </ul>
+
+                        </li>
+
+        </ul>
+    </section>
+</section>
+<section id="tuijian_b" class="b">
+    <section class="bhead">
+        优品推荐
+    </section>
+    <section class="bbody">
+        <ul class="clearfix">
+
+        </ul>
+    </section>
+</section>
+        </div>
+        <div class="fr rside">
+            <div class="rside-head">
+                <div class="fl">当前位置：<a href="/shop/index">商城首页</a>-<a href="/shop/products">商品中心</a></div>
+                <a class="fr" href="/shop/cart">我的购物车(<span>0</span>)</a>
+            </div>
+            <div class="goods goods_list clearfix">
+                        <div class="b">
+                            <a class="img" href="/shop/products/detail/402">
+                                <img src="/LXFile/Product/2020042804/20200428042425_2912.jpg" title="华为 Freebuds 3 红">
+                            </a>
+                            <div class="info">
+                                <a class="name" href="/shop/products/detail/402">华为 Freebuds 3 红</a>
+                                <div class="price">
+                                    €<span>159.00</span>
+                                </div>
+                                <div>
+                                    <span class="txt">销量：2</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b">
+                            <a class="img" href="/shop/products/detail/401">
+                                <img src="/LXFile/Product/2020042804/20200428042448_3596.jpg" title="华为 Freebuds 3 白">
+                            </a>
+                            <div class="info">
+                                <a class="name" href="/shop/products/detail/401">华为 Freebuds 3 白</a>
+                                <div class="price">
+                                    €<span>159.00</span>
+                                </div>
+                                <div>
+                                    <span class="txt">销量：1</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b">
+                            <a class="img" href="/shop/products/detail/400">
+                                <img src="/LXFile/Product/2020042804/20200428042506_5469.jpg" title="华为 Freebuds 3 黑">
+                            </a>
+                            <div class="info">
+                                <a class="name" href="/shop/products/detail/400">华为 Freebuds 3 黑</a>
+                                <div class="price">
+                                    €<span>159.00</span>
+                                </div>
+                                <div>
+                                    <span class="txt">销量：0</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b">
+                            <a class="img" href="/shop/products/detail/399">
+                                <img src="/LXFile/Product/2020042804/20200428043148_7833.jpg" title="华为 Watch GT2 46MM 黑">
+                            </a>
+                            <div class="info">
+                                <a class="name" href="/shop/products/detail/399">华为 Watch GT2 46MM 黑</a>
+                                <div class="price">
+                                    €<span>229.00</span>
+                                </div>
+                                <div>
+                                    <span class="txt">销量：0</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b">
+                            <a class="img" href="/shop/products/detail/398">
+                                <img src="/LXFile/Product/2020042804/20200428043202_5257.jpg" title="华为 Watch GT2 46MM 橙色">
+                            </a>
+                            <div class="info">
+                                <a class="name" href="/shop/products/detail/398">华为 Watch GT2 46MM 橙色</a>
+                                <div class="price">
+                                    €<span>229.00</span>
+                                </div>
+                                <div>
+                                    <span class="txt">销量：0</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b">
+                            <a class="img" href="/shop/products/detail/397">
+                                <img src="/LXFile/Product/2020042804/20200428043216_2125.jpg" title="华为 Watch GT2 46MM 咖啡">
+                            </a>
+                            <div class="info">
+                                <a class="name" href="/shop/products/detail/397">华为 Watch GT2 46MM 咖啡</a>
+                                <div class="price">
+                                    €<span>249.00</span>
+                                </div>
+                                <div>
+                                    <span class="txt">销量：0</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b">
+                            <a class="img" href="/shop/products/detail/396">
+                                <img src="/LXFile/Product/2020042804/20200428043315_9238.jpg" title="华为 Watch GT2 46MM 金属灰">
+                            </a>
+                            <div class="info">
+                                <a class="name" href="/shop/products/detail/396">华为 Watch GT2 46MM 金属灰</a>
+                                <div class="price">
+                                    €<span>279.00</span>
+                                </div>
+                                <div>
+                                    <span class="txt">销量：0</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b">
+                            <a class="img" href="/shop/products/detail/395">
+                                <img src="/LXFile/Product/2020042804/20200428043258_669.jpg" title="华为 Watch GT2 42MM 香槟金">
+                            </a>
+                            <div class="info">
+                                <a class="name" href="/shop/products/detail/395">华为 Watch GT2 42MM 香槟金</a>
+                                <div class="price">
+                                    €<span>249.00</span>
+                                </div>
+                                <div>
+                                    <span class="txt">销量：0</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b">
+                            <a class="img" href="/shop/products/detail/394">
+                                <img src="/LXFile/Product/2020042804/20200428043337_4589.jpg" title="华为 Watch GT2 42MM 黑">
+                            </a>
+                            <div class="info">
+                                <a class="name" href="/shop/products/detail/394">华为 Watch GT2 42MM 黑</a>
+                                <div class="price">
+                                    €<span>199.00</span>
+                                </div>
+                                <div>
+                                    <span class="txt">销量：0</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+            </div>
+            <div class="page">
+                <div class="pagination top10 bottom10"><a href="/shop/products/index?cid=0" title="首页">首页</a><a href="/shop/products/index?cid=0&page=1" title="上一页">上一页</a> <a class="number current">1</a> <a class="number" href="/shop/products/index?cid=0&page=2">2</a> <a class="number" href="/shop/products/index?cid=0&page=3">3</a> <a class="number" href="/shop/products/index?cid=0&page=4">4</a> <a class="number" href="/shop/products/index?cid=0&page=5">5</a><a href="/shop/products/index?cid=0&page=2" title="下一页">下一页</a><a href="/shop/products/index?cid=0&page=5" title="尾页">尾页</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="totop">
+        <a href="javascript:;" class="icon icon_totop sidetop"></a>
+    </div>
+</section>
+    <!-- footer -->
+    <footer>
+        <div class="w clearfix">
+            <div class="fb fl">
+                <a class="head block main-a" href="/shop/help">新手帮助</a>
+                <div class="body">
+
+                </div>
+            </div>
+
+            <div class="fb fl">
+                <a class="head block main-a">商品中心</a>
+                <div class="body">
+                    <a class="block main-a" href="/shop/products">商品中心</a>
+                    <a class="block main-a" href="/shop/index">欧洲代购</a>
+                    <a class="block main-a" href="/shop/partner">购物网站推荐</a>
+                </div>
+            </div>
+
+            
+            <div class="fb fl">
+                <a class="head block main-a">服务内容  </a>
+                <div class="body">
+                    
+                    <a class="block main-a" href="/shop/service/index">协议条款与条件</a>
+                    <a class="block main-a" href="/shop/service/rgoods">退货表格</a>
+                    <a class="block main-a" href="/shop/service/transport">运输条款</a>
+                    <a class="block main-a" href="/shop/service/privacy">隐私条款</a>
+                </div>
+            </div>
+
+            <div class="fb fl">
+                <a class="head block main-a" href="/shop/active">优惠政策</a>
+                <div class="body">
+
+                </div>
+            </div>
+            <div class="fb fl">
+                <a class="head block main-a" href="/shop/help">售后服务</a>
+                <div class="body">
+
+                </div>
+            </div>
+
+            <div class="fb fl tel">
+                <a class="head block main-a">服务热线</a>
+                <div class="body">
+                    <div class="span">客服：</div>
+                    <div class="color">0032(0)25114868</div>
+                    <div class="span">邮箱：</div>
+                    <div class="color">Kybrussels@outlook.com</div>
+                </div>
+            </div>
+
+            
+        </div>
+    </footer>
+    <!-- bottom -->
+    <div class="bottom">
+        <div class="w text-center">
+            <a class="main-a" href="/shop/index">首页</a>
+            |
+            <a class="main-a" href="/shop/index">直邮中国</a>
+            |
+            <a class="main-a" href="/news">新闻公告</a>
+            |
+            <a class="main-a" href="/shop/help">帮助中心</a>
+        </div>
+        <div class="w text-center">copyright © 2016 Parcelchina.co.uk All Rights Reserved. 东舟商城 版权所有</div>
+        <div class="w text-center">Parcelchina.co.uk Trading as Cheng Yi Parcel LTD</div>
+    </div>
+    <!-- 客服 -->
+    
+    <!-- 客服 -->
+    <a href="/shop/cart"><div class="fixcar"><i class="c_num">0</i></div></a>
+
+
+</body>
+</html>
